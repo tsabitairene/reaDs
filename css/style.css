@@ -396,7 +396,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 
 .search-input {
   display: inline-block; /* Atur agar elemen search-input berada dalam satu baris */
-  margin-left: 20px; /* Atur jarak sesuai kebutuhan Anda */
+  margin-left: 10px; /* Atur jarak sesuai kebutuhan Anda */
 }
 
 .search-input input[type="text"] {
@@ -406,10 +406,31 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 .search-input i {
-  margin-left: 20px; /* Menambahkan jarak antara ikon dan input */
+  margin-left: 10px; /* Menambahkan jarak antara ikon dan input */
 }
 
+.float-right {
+  float: right;
+}
 
+.ml-auto {
+  margin-left: auto;
+}
+
+.site-menu {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.site-menu li {
+  display: inline-block;
+  margin-right: 10px; /*Jarak antara menu*/
+}
+
+.dropdown-menu {
+  min-width: auto; /* Lebar dropdown mengikuti konten */
+}
 
 .site-mobile-menu-close {
   display: block;

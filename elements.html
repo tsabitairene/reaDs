@@ -11,7 +11,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Untree.co">
-  <link rel="shortcut icon" href="favicon.png">
+  <link rel="shortcut icon" href="images/50.png">
 
   <meta name="description" content="" />
   <meta name="keywords" content="" />
@@ -19,8 +19,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/fontawesome.css">
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
   <link rel="stylesheet" href="css/jquery.fancybox.min.css">
@@ -29,11 +32,15 @@
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/style.css">
 
-  <title>Landing Free HTML Template by Untree.co</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
+
+  <title>reaDs</title>
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="100">
-
 
   <div class="site-mobile-menu site-navbar-target">
     <div class="site-mobile-menu-header">
@@ -45,51 +52,57 @@
   </div>
 
 
-  
+
   <nav class="site-nav dark js-site-navbar mb-5 site-navbar-target">
     <div class="container">
-      <div class="site-navigation">
-        <a href="index.html" class="logo m-0 float-left">Landing<span class="text-primary">.</span></a>
+        <div class="site-navigation d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo m-0">rea<span class="text-primary">D</span>s</a>
 
-        <ul class="js-clone-nav d-none d-lg-inline-block site-menu float-left">
-          <li class="active"><a href="#home-section" class="nav-link">Home</a></li>
-          <li class="has-children">
-            <a href="#" class="nav-link">Dropdown</a>
-            <ul class="dropdown">
-              <li><a href="index.html#testimonials-section" class="nav-link">Testimonials</a></li>
-              <li class="active"><a href="elements.html" class="nav-link">Elements</a></li>
-              <li class="has-children">
-                <a href="#">Menu Two</a>
-                <ul class="dropdown">
-                  <li><a href="#" class="nav-link">Sub Menu One</a></li>
-                  <li><a href="#" class="nav-link">Sub Menu Two</a></li>
-                  <li><a href="#" class="nav-link">Sub Menu Three</a></li>
-                </ul>
-              </li>
-              <li><a href="#" class="nav-link">Menu Three</a></li>
+            <ul class="js-clone-nav d-none d-lg-inline-block site-menu d-flex">
+                <li class="active"><a href="#home-section" class="nav-link">Home</a></li>
+                <li class="has-children">
+                    <a href="#" class="nav-link">Kategori</a>
+                    <ul class="dropdown">
+                        <li><a href="#testimonials-section" class="nav-link">Pendidikan</a></li>
+                        <li><a href="elements.html" class="nav-link">Fiksi Remaja</a></li>
+                        <li><a href="elements.html" class="nav-link">Cerita Anak</a></li>
+                        <li><a href="elements.html" class="nav-link">Majalah</a></li>
+                    </ul>
+                </li>
+                <li><a href="#features-section" class="nav-link">History</a></li>
+                <li><a href="#contact-section" class="nav-link">Contact</a></li>
             </ul>
-          </li>
-          <li><a href="#features-section" class="nav-link">Features</a></li>
-          <li><a href="#pricing-section" class="nav-link">Pricing</a></li>
-          <li><a href="#about-section" class="nav-link">About</a></li>
-          <li><a href="#contact-section" class="nav-link">Contact</a></li>
-        </ul>
 
-        <ul class="js-clone-nav d-none mt-1 d-lg-inline-block site-menu float-right">
-          <li class="cta-button-outline"><a href="signin.html">Sign in</a></li>
-          <li class="cta-primary"><a href="register.html">Register</a></li>
-        </ul>
+            <div class="d-flex align-items-center ml-auto">
+                <form id="search" action="#" class="search-input d-flex align-items-center mr-4">
+                    <input type="text" placeholder="Cari Buku" id='searchText' name="searchKeyword" onkeypress="handle" />
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </form>
+                
+                <ul class="js-clone-nav d-none d-lg-inline-block site-menu d-flex align-items-center">
+                    <li class="mr-3">
+                        <img src="images/badge.png" alt="">
+                    </li>
+                    <li class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa-solid fa-user"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Profile</a>
+                            <a href="/l" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
 
-
-
-        <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block dark d-lg-none" data-toggle="collapse" data-target="#main-navbar">
-          <span></span>
-        </a>
-
-      </div>
+            <a href="#" class="burger ml-auto site-menu-toggle js-menu-toggle d-inline-block dark d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                <span></span>
+            </a>
+        </div>
     </div>
   </nav>
-  
+
+
 
   <div class="untree_co-hero py-5 mb-0" id="home-section">
     <div class="container">
@@ -98,7 +111,8 @@
           <div class="dots"></div>
           <div class="row justify-content-center">
             <div class="col-md-7 text-center">
-              <h1 class="heading" data-aos="fade-up" data-aos-delay="0">Elements</h1>
+              <span>Kategori</span>
+              <h1 class="heading" data-aos="fade-up" data-aos-delay="0">Fiksi Remaja</h1>
             </div>
           </div>
         </div>
