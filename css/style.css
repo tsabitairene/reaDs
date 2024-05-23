@@ -1499,3 +1499,47 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
       .site-footer .social li a:hover {
         background: #0d62b9;
         color: #ffffff; }
+/* Tambahan style buat admin.html */
+
+.form-container {
+  background-color: #ffffff;
+  border: 1px solid #e3e6f0;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1800px;
+}
+.form-title {
+  color: #107be9;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.form-label {
+  color: #107be9;
+}
+.btn-custom {
+  background-color: #107be9;
+  color: #ffffff;
+}
+.btn-custom:hover {
+  background-color: #0a6acb;
+  color: #ffffff;
+}
+
+/* Custom styles for search input */
+.search-input {
+  border-radius: 25px;
+  max-width: 300px;
+}
+
+/* Custom styles for table */
+.table-custom thead th {
+  background-color: #107be9;
+  color: white;
+}
+.table-custom tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+.table-custom tbody tr:nth-child(even) {
+  background-color: white;
+}
