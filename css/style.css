@@ -831,10 +831,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
       flex-wrap: wrap; /* Jika Anda ingin elemen-elemen melipat ke baris berikutnya jika tidak muat dalam satu baris */
       gap: 10px; /* Menambahkan jarak antar kartu */
       justify-content: center; /* Pusatkan kartu secara horizontal */
+     
     }
     
     .card {
       flex: 0 0 auto; /* Mengatur kartu untuk tidak mengembang atau menyusut */
+      margin-bottom: 50px;
     }
     
 
@@ -1070,6 +1072,44 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     color: #000000; }
     .ul-links li a:hover {
       color: #107BE9; }
+
+      .comment-section {
+        margin-top: 20px;
+      }
+      
+      #comment-input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        height: 100px; /* Adjust height as needed */
+        box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+      }
+      
+      #comment-input::placeholder {
+        text-align: center;
+      }
+      
+      #comment-input:focus {
+        outline: none;
+        border-color: #007bff; /* Optional: Change border color on focus */
+      }
+      
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+      
+      button:hover {
+        background-color: #0056b3;
+      }
+      
+      
 
 .btn-video {
   display: block;
