@@ -72,14 +72,15 @@
             </ul>
 
             <div class="d-flex align-items-center ml-auto">
-                <form id="search" action="#" class="search-input d-flex align-items-center mr-4">
-                    <input type="text" placeholder="Cari buku" id='searchText' name="searchKeyword" onkeypress="handle" />
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </form>
+              <form id="search" action="" method="GET" class="search-input d-flex align-items-center mr-4" style="position: relative;">
+                <input type="text" placeholder="Cari buku" id='searchText' name="searchKeyword" style="padding-right: 30px;" />
+                <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%);"></i>
+              </form>
+            
                 
                 <ul class="js-clone-nav d-none d-lg-inline-block site-menu d-flex align-items-center">
                     <li class="mr-3">
-                        <img src="images/badge.png" alt="">
+                        <a href="profile.html"><img src="images/badge.png" alt=""></a>
                     </li>
                     <li class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -122,8 +123,7 @@
                   <p>Pinjam buku jadi lebih seru dan menyenangkan.</p>  
                 </div> <!-- /.excerpt -->
                 <p data-aos="fade-up"  data-aos-delay="200">
-                  <a href="#features-section" class="btn btn-primary smoothscroll mr-1">Pinjam buku</a>
-                  <!-- <a href="#pricing-section" class="btn btn-outline-primary smoothscroll">Pricing</a> -->
+                  <a href="#koleksi-section" class="btn btn-primary smoothscroll mr-1">Pinjam buku</a>
                 </p>
               </div>
               
@@ -143,7 +143,7 @@
     </div> -->
   </div> <!-- /.untree_co-hero -->
 
-  <div class="untree_co-section">
+  <div class="untree_co-section" id="koleksi-section">
     <div class="container">
 
       <div class="row mb-5">
@@ -161,7 +161,7 @@
             <span class="caption">Pendidikan</span>
             <h5 class="card-title">Bumi</h5>
             <p class="card-text">Tere Liye</p>
-            <a href="#" class="btn btn-primary" style="display: grid; place-items: center;">Pinjam</a>
+            <a href="detail.html" class="btn btn-primary" style="display: grid; place-items: center;">Detail</a>
           </div>
         </div>
         <div class="card" style="width: 10rem; border: 1px solid #ccc; border-radius: 20px;">
@@ -170,7 +170,7 @@
             <span class="caption">Fiksi Remaja</span>
             <h5 class="card-title">Bumi</h5>
             <p class="card-text">Tere Liye</p>
-            <a href="#" class="btn btn-primary" style="display: grid; place-items: center;">Pinjam</a>
+            <a href="detail.html" class="btn btn-primary" style="display: grid; place-items: center;">Detail</a>
           </div>
         </div>
         <div class="card" style="width: 10rem; border: 1px solid #ccc; border-radius: 20px;">
@@ -179,7 +179,7 @@
             <span class="caption">Cerita Anak</span>
             <h5 class="card-title">Bumi</h5>
             <p class="card-text">Tere Liye</p>
-            <a href="#" class="btn btn-primary" style="display: grid; place-items: center;">Pinjam</a>
+            <a href="detail.html" class="btn btn-primary" style="display: grid; place-items: center;">Detail</a>
           </div>
         </div>
         <div class="card" style="width: 10rem; border: 1px solid #ccc; border-radius: 20px;">
@@ -188,7 +188,7 @@
             <span class="caption">Cerita Anak</span>
             <h5 class="card-title">Bumi</h5>
             <p class="card-text">Tere Liye</p>
-            <a href="#" class="btn btn-primary" style="display: grid; place-items: center;">Pinjam</a>
+            <a href="detail.html" class="btn btn-primary" style="display: grid; place-items: center;">Detail</a>
           </div>
         </div>
         <div class="card" style="width: 10rem; border: 1px solid #ccc; border-radius: 20px;">
@@ -197,7 +197,7 @@
             <span class="caption">Majalah</span>
             <h5 class="card-title">Bumi</h5>
             <p class="card-text">Tere Liye</p>
-            <a href="#" class="btn btn-primary" style="display: grid; place-items: center;">Pinjam</a>
+            <a href="detail.html" class="btn btn-primary" style="display: grid; place-items: center;">Detail</a>
           </div>
         </div>
         <div class="card" style="width: 10rem; border: 1px solid #ccc; border-radius: 20px;">
@@ -206,7 +206,7 @@
             <span class="caption">Fiksi Remaja</span>
             <h5 class="card-title">Bumi</h5>
             <p class="card-text">Tere Liye</p>
-            <a href="#" class="btn btn-primary" style="display: grid; place-items: center;">Pinjam</a>
+            <a href="detail.html" class="btn btn-primary" style="display: grid; place-items: center;">Detail</a>
           </div>
         </div>
       </div>
@@ -214,55 +214,71 @@
   </div> <!-- /.untree_co-section -->
 
   <div class="untree_co-section">
-    <div class="container">
-
-      <div class="row">
+    <div class="container justify-content-center align-items-center">
+      <div class="row justify-content-center">
         <div class="col-12 mb-5 text-center" data-aos="fade-up">
           <!-- <span class="caption">Features</span> -->
           <h2 class="heading">Kategori</h2>
         </div>
 
         <div class="col-md-6 mb-4 mb-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="0">
-          <div class="service">
-            <div class="service-icon color-1 mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M337.8 5.4C327-1.8 313-1.8 302.2 5.4L166.3 96H48C21.5 96 0 117.5 0 144V464c0 26.5 21.5 48 48 48H256V416c0-35.3 28.7-64 64-64s64 28.7 64 64v96H592c26.5 0 48-21.5 48-48V144c0-26.5-21.5-48-48-48H473.7L337.8 5.4zM96 192h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V208c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V208zM96 320h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V336c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V336zM232 176a88 88 0 1 1 176 0 88 88 0 1 1 -176 0zm88-48c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H336V144c0-8.8-7.2-16-16-16z"/></svg>            </div> <!-- /.icon -->
-            <div class="service-contents">
-              <h3><a href="pendidikan.html"></a>Pendidikan</h3>
-              <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>   -->
-            </div> <!-- /.service-contents-->
-          </div> <!-- /.service -->
-        </div> <!-- /.col-lg-3 -->
-
-        <div class="col-md-6 mb-4 mb-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-          <div class="service">
-            <div class="service-icon color-2 mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M160 0a64 64 0 1 1 0 128A64 64 0 1 1 160 0zM88 480V400H70.2c-10.9 0-18.6-10.7-15.2-21.1l31.1-93.4L57.5 323.3c-10.7 14.1-30.8 16.8-44.8 6.2s-16.8-30.7-6.2-44.8L65.4 207c22.4-29.6 57.5-47 94.6-47s72.2 17.4 94.6 47l58.9 77.7c10.7 14.1 7.9 34.2-6.2 44.8s-34.2 7.9-44.8-6.2l-28.6-37.8L265 378.9c3.5 10.4-4.3 21.1-15.2 21.1H232v80c0 17.7-14.3 32-32 32s-32-14.3-32-32V400H152v80c0 17.7-14.3 32-32 32s-32-14.3-32-32zM480 0a64 64 0 1 1 0 128A64 64 0 1 1 480 0zm-8 384v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V300.5L395.1 321c-9.4 15-29.2 19.4-44.1 10s-19.4-29.2-10-44.1l51.7-82.1c17.6-27.9 48.3-44.9 81.2-44.9h12.3c33 0 63.7 16.9 81.2 44.9L619.1 287c9.4 15 4.9 34.7-10 44.1s-34.7 4.9-44.1-10L552 300.5V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V384H472z"/></svg>            </div> <!-- /.icon -->
-            <div class="service-contents">
-              <h3><a href="fiksi-remaja.html"></a>Fiksi Remaja</h3>
-              <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>   -->
-            </div> <!-- /.service-contents-->
-          </div> <!-- /.service -->
-        </div> <!-- /.col-lg-3 -->
-
-        <div class="col-md-6 mb-4 mb-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-          <div class="service">
-            <div class="service-icon color-3 mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 64A64 64 0 1 0 128 64a64 64 0 1 0 128 0zM152.9 169.3c-23.7-8.4-44.5-24.3-58.8-45.8L74.6 94.2C64.8 79.5 45 75.6 30.2 85.4s-18.7 29.7-8.9 44.4L40.9 159c18.1 27.1 42.8 48.4 71.1 62.4V480c0 17.7 14.3 32 32 32s32-14.3 32-32V384h32v96c0 17.7 14.3 32 32 32s32-14.3 32-32V221.6c29.1-14.2 54.4-36.2 72.7-64.2l18.2-27.9c9.6-14.8 5.4-34.6-9.4-44.3s-34.6-5.5-44.3 9.4L291 122.4c-21.8 33.4-58.9 53.6-98.8 53.6c-12.6 0-24.9-2-36.6-5.8c-.9-.3-1.8-.7-2.7-.9z"/></svg>
+          <div class="service d-flex flex-column justify-content-center align-items-center" style="height: 100%;">
+            <div class="service-icon color-1 mb-4 text-center d-flex justify-content-center align-items-center">
+              <a href="category.html">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="25" height="25">
+                  <path d="M337.8 5.4C327-1.8 313-1.8 302.2 5.4L166.3 96H48C21.5 96 0 117.5 0 144V464c0 26.5 21.5 48 48 48H256V416c0-35.3 28.7-64 64-64s64 28.7 64 64v96H592c26.5 0 48-21.5 48-48V144c0-26.5-21.5-48-48-48H473.7L337.8 5.4zM96 192h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V208c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V208zM96 320h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V336c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V336zM232 176a88 88 0 1 1 176 0 88 88 0 1 1 -176 0zm88-48c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H336V144c0-8.8-7.2-16-16-16z"/>
+                </svg>
+              </a>
             </div> <!-- /.icon -->
-            <div class="service-contents">
-              <h3><a href="cerita-anak.html"></a>Cerita Anak</h3>
+            <div class="service-contents text-center">
+              <h3>Pendidikan</h3>
+            </div> <!-- /.service-contents-->
+          </div> <!-- /.service -->
+        </div> <!-- /.col-lg-3 -->
+        
+
+       <div class="col-md-6 mb-4 mb-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+          <div class="service d-flex flex-column justify-content-center align-items-center" style="height: 100%;">
+            <div class="service-icon color-2 mb-4 text-center d-flex justify-content-center align-items-center">
+              <a href="category.html">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="25" height="25">
+                  <path d="M160 0a64 64 0 1 1 0 128A64 64 0 1 1 160 0zM88 480V400H70.2c-10.9 0-18.6-10.7-15.2-21.1l31.1-93.4L57.5 323.3c-10.7 14.1-30.8 16.8-44.8 6.2s-16.8-30.7-6.2-44.8L65.4 207c22.4-29.6 57.5-47 94.6-47s72.2 17.4 94.6 47l58.9 77.7c10.7 14.1 7.9 34.2-6.2 44.8s-34.2 7.9-44.8-6.2l-28.6-37.8L265 378.9c3.5 10.4-4.3 21.1-15.2 21.1H232v80c0 17.7-14.3 32-32 32s-32-14.3-32-32V400H152v80c0 17.7-14.3 32-32 32s-32-14.3-32-32zM480 0a64 64 0 1 1 0 128A64 64 0 1 1 480 0zm-8 384v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V300.5L395.1 321c-9.4 15-29.2 19.4-44.1 10s-19.4-29.2-10-44.1l51.7-82.1c17.6-27.9 48.3-44.9 81.2-44.9h12.3c33 0 63.7 16.9 81.2 44.9L619.1 287c9.4 15 4.9 34.7-10 44.1s-34.7 4.9-44.1-10L552 300.5V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V384H472z"/>
+                </svg>  
+              </a>          
+            </div> <!-- /.icon -->
+            <div class="service-contents text-center">
+              <h3>Fiksi Remaja</h3>
               <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>   -->
             </div> <!-- /.service-contents-->
           </div> <!-- /.service -->
         </div> <!-- /.col-lg-3 -->
 
-        <div class="col-md-6 mb-4 mb-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-          <div class="service">
-            <div class="service-icon color-4 mb-4">
-              <a href="majalah.html" class="nav-link"></a>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 256V160H224v96H64zm0 64H224v96H64V320zm224 96V320H448v96H288zM448 256H288V160H448v96zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"/></svg>
+        <div class="col-md-6 mb-4 mb-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+          <div class="service d-flex flex-column justify-content-center align-items-center" style="height: 100%;">
+            <div class="service-icon color-3 mb-4 text-center d-flex justify-content-center align-items-center">
+              <a href="category.html">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="25" height="25">
+                  <path d="M256 64A64 64 0 1 0 128 64a64 64 0 1 0 128 0zM152.9 169.3c-23.7-8.4-44.5-24.3-58.8-45.8L74.6 94.2C64.8 79.5 45 75.6 30.2 85.4s-18.7 29.7-8.9 44.4L40.9 159c18.1 27.1 42.8 48.4 71.1 62.4V480c0 17.7 14.3 32 32 32s32-14.3 32-32V384h32v96c0 17.7 14.3 32 32 32s32-14.3 32-32V221.6c29.1-14.2 54.4-36.2 72.7-64.2l18.2-27.9c9.6-14.8 5.4-34.6-9.4-44.3s-34.6-5.5-44.3 9.4L291 122.4c-21.8 33.4-58.9 53.6-98.8 53.6c-12.6 0-24.9-2-36.6-5.8c-.9-.3-1.8-.7-2.7-.9z"/>
+                </svg>
+              </a>
             </div> <!-- /.icon -->
-            <div class="service-contents">
+            <div class="service-contents text-center">
+              <h3>Cerita Anak</h3>
+              <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>   -->
+            </div> <!-- /.service-contents-->
+          </div> <!-- /.service -->
+        </div> <!-- /.col-lg-3 -->
+
+        <div class="col-md-6 mb-4 mb-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+          <div class="service d-flex flex-column justify-content-center align-items-center" style="height: 100%;">
+            <div class="service-icon color-4 mb-4 text-center d-flex justify-content-center align-items-center">
+              <a href="category.html">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25" height="25">
+                  <path d="M64 256V160H224v96H64zm0 64H224v96H64V320zm224 96V320H448v96H288zM448 256H288V160H448v96zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"/>
+                </svg>
+              </a>
+            </div> <!-- /.icon -->
+            <div class="service-contents text-center">
               <h3>Majalah</h3>
               <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>   -->
             </div> <!-- /.service-contents-->

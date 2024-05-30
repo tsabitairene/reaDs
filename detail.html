@@ -73,14 +73,14 @@
             </ul>
 
             <div class="d-flex align-items-center ml-auto">
-                <form id="search" action="#" class="search-input d-flex align-items-center mr-4">
-                    <input type="text" placeholder="Cari buku" id='searchText' name="searchKeyword" onkeypress="handle" />
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </form>
+              <form id="search" action="" method="GET" class="search-input d-flex align-items-center mr-4" style="position: relative;">
+                <input type="text" placeholder="Cari buku" id='searchText' name="searchKeyword" style="padding-right: 30px;" />
+                <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%);"></i>
+              </form>
                 
                 <ul class="js-clone-nav d-none d-lg-inline-block site-menu d-flex align-items-center">
                     <li class="mr-3">
-                        <img src="images/badge.png" alt="">
+                      <a href="profile.html"><img src="images/badge.png" alt=""></a>
                     </li>
                     <li class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -106,9 +106,6 @@
 
       <div class="row">
         <div class="col-12 mb-5 text-center" data-aos="fade-up">
-          <!-- <span class="caption">Pinjam Buku</span> -->
-          <!-- <h2 class="heading">Pinjam Buku</h2> -->
-
           <div class="card mb-5" style="max-width: 1200px; border: none;">
             <div class="row g-0">
               <div class="col-md-4">
@@ -119,19 +116,32 @@
                   <h5 class="card-title">Bumi</h5>
                   <p class="card-text"><small class="text-muted">Tere Liye</small></p>
                   <p class="card-text">“Namaku Raib, usiaku 15 tahun, kelas sepuluh. Aku anak perempuan seperti kalian, adik-adik kalian, tetangga kalian. Aku punya dua kucing, namanya si Putih dan si Hitam. Mama dan papaku menyenangkan. Guru-guru di sekolahku seru. Teman-temanku baik dan kompak.”</p>
-                  <!-- <button class="like-button" onclick="toggleLike(this)">
-                    <span class="like-icon">❤️</span> 
-                    <span class="like-count">0</span>
-                  </button> -->
-                  <div>
-                    <button class="btn btn-primary" style="border-radius: 20px;">Pinjam buku</button>
+                  <div class="container mt-5">
+                    <div>
+                      <button id="toggleButton" class="btn btn-primary btn-custom">Pinjam buku</button>
+                    </div>
                   </div>
+                  <script>
+                    document.getElementById('toggleButton').addEventListener('click', function() {
+                      if (this.textContent === 'Pinjam buku') {
+                        this.textContent = 'Kembalikan buku';
+                      } else {
+                        this.textContent = 'Pinjam buku';
+                      }
+                    });
+                  </script>
                   <div class="comment-section" style="margin-top: 10rem;">
                     <span>Comment</span>
                     <div id="comments"></div>
                     <textarea class="text btn-outline-primary d-flex align-items-center mr-4" style="border-radius: 20px;" id="comment-input" placeholder="Tulis komentar"></textarea>
                     <button class="btn btn-primary" onclick="addComment()">Kirim</button>
                   </div>
+                  <div class="mt-5">
+                    <h3>All Comments</h3>
+                    <div id="comments-section">
+                        <!-- Komentar akan ditampilkan di sini -->
+                    </div>
+                </div>
                 </div>
               </div>
             </div>

@@ -1151,6 +1151,16 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     opacity: 1;
     visibility: visible; }
 
+    .transparent-button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      color: #000; /* warna teks tombol */
+  }
+
+  
+
 .count-numbers .counter {
   color: #000000;
   font-size: 40px; }

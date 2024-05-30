@@ -72,14 +72,14 @@
             </ul>
 
             <div class="d-flex align-items-center ml-auto">
-                <form id="search" action="#" class="search-input d-flex align-items-center mr-4">
-                    <input type="text" placeholder="Cari buku" id='searchText' name="searchKeyword" onkeypress="handle" />
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </form>
+              <form id="search" action="" method="GET" class="search-input d-flex align-items-center mr-4" style="position: relative;">
+                <input type="text" placeholder="Cari buku" id='searchText' name="searchKeyword" style="padding-right: 30px;" />
+                <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%);"></i>
+              </form>
                 
                 <ul class="js-clone-nav d-none d-lg-inline-block site-menu d-flex align-items-center">
                     <li class="mr-3">
-                        <img src="images/badge.png" alt="">
+                      <a href="profile.html"><img src="images/badge.png" alt=""></a>
                     </li>
                     <li class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
