@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2024 at 09:21 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Waktu pembuatan: 31 Bulan Mei 2024 pada 13.20
+-- Versi server: 10.4.28-MariaDB
+-- Versi PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `data_reads`
+-- Database: `reads_db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buku`
+-- Struktur dari tabel `buku`
 --
 
 CREATE TABLE `buku` (
@@ -39,7 +39,7 @@ CREATE TABLE `buku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `buku`
+-- Dumping data untuk tabel `buku`
 --
 
 INSERT INTO `buku` (`id`, `judul_buku`, `gambar`, `deskripsi`, `status`, `tersedia`, `kategori`, `lokasi_buku`) VALUES
@@ -66,12 +66,17 @@ INSERT INTO `buku` (`id`, `judul_buku`, `gambar`, `deskripsi`, `status`, `tersed
 (21, 'Scarf', 'scarf.jpg', 'Majalah bertajuk Scarf ini memuat konten-konten mengenai fashion khas muslimah dan terbit setiap dua bulan sekali. Majalah Scarf terbit pertama kali pada tahun 2012 di bawah naungan PT Kreasi Kriya.\r\n\r\nKeberadaan majalah Scarf ini tentu saja dapat menjadi jawaban bagi fashion para wanita muslimah di Indonesia karena konten-konten yang termuat di dalamnya banyak membahas mengenai fashion muslimah Indonesia.\r\n\r\nNamun, konten yang dimuat tidak hanya sebatas fashion muslimah saja, tetapi juga kecantikan, make-up, tutorial hijab, padu-padan gaya berpakaian muslimah, hingga travelling. Target pembaca majalah ini para remaja hingga wanita dewasa muslimah.', 'tersedia', 1, 'majalah', 'rak 6'),
 (22, 'Her World', 'her_world.jpg', 'Her World adalah rekomendasi majalah fashion terbaik kedua yang terbit secara bulanan. Dalam majalah ini, banyak hal yang dibahas mulai dari lifestyle wanita dewasa, kecantikan, selebriti, berita dan tips terbaru dari mode, makanan, hiburan, dan lain-lain.\r\n\r\nMajalah fashion bertajuk Her World ini telah terbit sejak 1960 yang sebenarnya merupakan majalah asal negara Singapura. Namun, seiring berkembangnya waktu, majalah fashion ini telah membuka cabang di beberapa negara lain, termasuk Indonesia.', 'tersedia', 1, 'majalah', 'rak 6'),
 (23, 'Bobo Teman Bermain dan Belajar', 'bobo.jpg', 'Bedug-bedug Nusantara\r\n\r\nSiapa yang suka menabuh bedug? Wah ternyata di berbagai daerah di Indonesia ada beraneka ragam bedug, lo. Teman-teman bisa mengetahui bedugbedug unik itu di Majalah Bobo kali ini. Dan bicara soal hal yang unik, buah ternyata bisa dijadikan olahan makanan yang rasanya unik, yaitu menjadi manisan. Siapa yang menyukainya? Hmm… Apa saja manisan itu, ya? Yuk terus membaca... Sebab Aku Baca, Aku Tahu!', 'tersedia', 1, 'majalah', 'rak 6'),
-(24, 'Psikologi Pendidikan', 'psikologi.jpg', 'Buku Psikologi Pendidikan\r\n\r\nBuku yang berjudul Psikologi Pendidikan ini dibagi menjadi enam bab. Bab pertama Psikologi dan Psikologi Pendidikan, mencakup pengertian psikologi dan ruang lingkup psikologi, definisi psikologi pendidikan, manfaat psikologi pendidikan, dan metode psikologi pendidikan. Bab kedua yaitu Hakikat Belajar dan Pembelajaran, Pengertian Belajar, mencakup pengertian hasil belajar, tujuan belajar, macam-macam belajar, faktor yang mempengaruhi hasil belajar, pengaruh minat terhadap kegiatan belajar, pengertian pembelajaran, prinsip pembelajaran, dan kinerja mengajar guru/kinerja mengajar di sekolah dasar. Bab ketiga yaitu Teori Belajar dan Pembelajaran, mencakup teori behaviorisme, teori kognitivisme, teori konstruktivisme, belajar humanistik, dan belajar kecerdasan ganda. Bab keempat yaitu Unsur Belajar dan Pembelajaran, mencakup unsur dinamis pada diri guru, dinamika siswa dalam kelas, dinamika guru dalam kegiatan pembelajaran, upaya pengembangan unsur dinamis siswa dalam proses belajar, masalah-masalah dalam belajar, dan hasil belajar. Bab kelima yaitu Mengelola Proses Belajar dan Pembelajaran, mencakup pengertian belajar dan mengajar di kelas, prinsip belajar, berbagai gaya mengajar di kelas, arti berbagai gaya, mengajar efektif, kemampuan merencanakan pengajaran, kemampuan melaksanakan proses belajar mengajar, dan kemampuan mengevaluasi pelaksanaan penilaian. Bab keenam yaitu Model-Model Mengajar di Kelas, mencakup pengajaran timbal balik.\r\n\r\nKehadiran buku ini merupakan bagian dari sumbangsih pemikiran penulis untuk mengkaji/membahas tentang psikologi pendidikan karena pentingnya psikologi dalam pendidikan menjadi bahasan utama yang dibahas pada buku Psikologi Pendidikan. Banyak orang berpendapat bahwa tujuan pendidikan dasar adalah mempersiapkan generasi muda untuk melanjutkan pendidikan ke jenjang yang lebih tinggi. Pendidikan tinggi akhirnya dimaksudkan untuk mempersiapkan para mahasiswa untuk dapat memperoleh sukses dalam karier dan kehidupan pribadi, serta mampu berpartisipasi di dalam masyarakat. Semua ini kemudian dimaksudkan untuk menjadikan negara lebih maju dari pada negara-negara yang lain', 'tersedia', 1, 'pendidikan', 'rak 5');
+(24, 'Psikologi Pendidikan', 'psikologi.jpg', 'Buku Psikologi Pendidikan\r\n\r\nBuku yang berjudul Psikologi Pendidikan ini dibagi menjadi enam bab. Bab pertama Psikologi dan Psikologi Pendidikan, mencakup pengertian psikologi dan ruang lingkup psikologi, definisi psikologi pendidikan, manfaat psikologi pendidikan, dan metode psikologi pendidikan. Bab kedua yaitu Hakikat Belajar dan Pembelajaran, Pengertian Belajar, mencakup pengertian hasil belajar, tujuan belajar, macam-macam belajar, faktor yang mempengaruhi hasil belajar, pengaruh minat terhadap kegiatan belajar, pengertian pembelajaran, prinsip pembelajaran, dan kinerja mengajar guru/kinerja mengajar di sekolah dasar. Bab ketiga yaitu Teori Belajar dan Pembelajaran, mencakup teori behaviorisme, teori kognitivisme, teori konstruktivisme, belajar humanistik, dan belajar kecerdasan ganda. Bab keempat yaitu Unsur Belajar dan Pembelajaran, mencakup unsur dinamis pada diri guru, dinamika siswa dalam kelas, dinamika guru dalam kegiatan pembelajaran, upaya pengembangan unsur dinamis siswa dalam proses belajar, masalah-masalah dalam belajar, dan hasil belajar. Bab kelima yaitu Mengelola Proses Belajar dan Pembelajaran, mencakup pengertian belajar dan mengajar di kelas, prinsip belajar, berbagai gaya mengajar di kelas, arti berbagai gaya, mengajar efektif, kemampuan merencanakan pengajaran, kemampuan melaksanakan proses belajar mengajar, dan kemampuan mengevaluasi pelaksanaan penilaian. Bab keenam yaitu Model-Model Mengajar di Kelas, mencakup pengajaran timbal balik.\r\n\r\nKehadiran buku ini merupakan bagian dari sumbangsih pemikiran penulis untuk mengkaji/membahas tentang psikologi pendidikan karena pentingnya psikologi dalam pendidikan menjadi bahasan utama yang dibahas pada buku Psikologi Pendidikan. Banyak orang berpendapat bahwa tujuan pendidikan dasar adalah mempersiapkan generasi muda untuk melanjutkan pendidikan ke jenjang yang lebih tinggi. Pendidikan tinggi akhirnya dimaksudkan untuk mempersiapkan para mahasiswa untuk dapat memperoleh sukses dalam karier dan kehidupan pribadi, serta mampu berpartisipasi di dalam masyarakat. Semua ini kemudian dimaksudkan untuk menjadikan negara lebih maju dari pada negara-negara yang lain', 'tersedia', 1, 'pendidikan', 'rak 5'),
+(25, 'byuku', '', 'coa', 'tersedia', 1, 'cerita_anak', 'rak 5'),
+(26, 'byuku', '', 'coa', 'tersedia', 1, 'cerita anak', 'rak 5'),
+(27, 'byuku', '', 'coa', 'tersedia', 1, 'cerita anak', 'rak 5'),
+(28, 'byuku', '', 'coa', 'tersedia', 1, 'cerita anak', 'rak 5'),
+(29, 'byuku', '50.png', 'p', 'tersedia', 1, 'fiksi remaja', 'rak 3');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pinjam_buku`
+-- Struktur dari tabel `pinjam_buku`
 --
 
 CREATE TABLE `pinjam_buku` (
@@ -85,7 +90,7 @@ CREATE TABLE `pinjam_buku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `pinjam_buku`
+-- Dumping data untuk tabel `pinjam_buku`
 --
 
 INSERT INTO `pinjam_buku` (`id`, `id_buku`, `id_user`, `tanggal_pinjam`, `tanggal_kembali`, `jumlah`, `is_approved`) VALUES
@@ -118,12 +123,15 @@ INSERT INTO `pinjam_buku` (`id`, `id_buku`, `id_user`, `tanggal_pinjam`, `tangga
 (27, 11, 19, '2024-02-10 17:06:09', '2024-02-18 17:06:09', 1, '2'),
 (28, 2, 20, '2024-04-14 17:06:09', '2024-04-23 17:06:09', 1, '2'),
 (29, 5, 11, '2024-04-13 17:06:09', '2024-04-19 17:06:09', 1, '2'),
-(30, 18, 20, '2024-05-04 17:06:09', '2024-05-12 17:06:09', 1, '2');
+(30, 18, 20, '2024-05-04 17:06:09', '2024-05-12 17:06:09', 1, '2'),
+(31, 1, 4, '2024-05-31 11:12:46', '0000-00-00 00:00:00', 1, '1'),
+(32, 15, 4, '2024-05-31 12:49:27', '0000-00-00 00:00:00', 1, '1'),
+(33, 17, 4, '2024-05-31 13:34:23', '2024-05-31 13:34:48', 1, '2');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `review`
+-- Struktur dari tabel `review`
 --
 
 CREATE TABLE `review` (
@@ -134,7 +142,7 @@ CREATE TABLE `review` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `review`
+-- Dumping data untuk tabel `review`
 --
 
 INSERT INTO `review` (`id`, `id_buku`, `id_user`, `komentar`) VALUES
@@ -158,7 +166,7 @@ INSERT INTO `review` (`id`, `id_buku`, `id_user`, `komentar`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reward`
+-- Struktur dari tabel `reward`
 --
 
 CREATE TABLE `reward` (
@@ -168,17 +176,18 @@ CREATE TABLE `reward` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `reward`
+-- Dumping data untuk tabel `reward`
 --
 
 INSERT INTO `reward` (`id`, `id_user`, `reward`) VALUES
 (1, 4, 'Buku tulis 1 pak'),
-(2, 7, 'Kotak pensil');
+(2, 7, 'Kotak pensil'),
+(3, 4, 'Bakso');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -190,7 +199,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `nama_lengkap`, `username`, `password`, `is_admin`) VALUES
@@ -213,20 +222,22 @@ INSERT INTO `user` (`id`, `nama_lengkap`, `username`, `password`, `is_admin`) VA
 (17, 'Aan Sumedang', 'aan', 'aan123', 0),
 (18, 'Fadi Andika', 'fadi', 'fadi123', 0),
 (19, 'Tania Syifa', 'nia', 'nia123', 0),
-(20, 'Nurcahyo Ahmad', 'nur', 'nur123', 0);
+(20, 'Nurcahyo Ahmad', 'nur', 'nur123', 0),
+(21, 'demo', 'demo', 'demo123', 0),
+(22, 'admin', 'admin', 'admin123', 1);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `buku`
+-- Indeks untuk tabel `buku`
 --
 ALTER TABLE `buku`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pinjam_buku`
+-- Indeks untuk tabel `pinjam_buku`
 --
 ALTER TABLE `pinjam_buku`
   ADD PRIMARY KEY (`id`),
@@ -234,7 +245,7 @@ ALTER TABLE `pinjam_buku`
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indexes for table `review`
+-- Indeks untuk tabel `review`
 --
 ALTER TABLE `review`
   ADD PRIMARY KEY (`id`),
@@ -242,72 +253,72 @@ ALTER TABLE `review`
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indexes for table `reward`
+-- Indeks untuk tabel `reward`
 --
 ALTER TABLE `reward`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `buku`
+-- AUTO_INCREMENT untuk tabel `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT for table `pinjam_buku`
+-- AUTO_INCREMENT untuk tabel `pinjam_buku`
 --
 ALTER TABLE `pinjam_buku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT for table `review`
+-- AUTO_INCREMENT untuk tabel `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT for table `reward`
---
-ALTER TABLE `reward`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT untuk tabel `reward`
+--
+ALTER TABLE `reward`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT untuk tabel `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `pinjam_buku`
+-- Ketidakleluasaan untuk tabel `pinjam_buku`
 --
 ALTER TABLE `pinjam_buku`
   ADD CONSTRAINT `pinjam_buku_ibfk_1` FOREIGN KEY (`id_buku`) REFERENCES `buku` (`id`),
   ADD CONSTRAINT `pinjam_buku_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`);
 
 --
--- Constraints for table `review`
+-- Ketidakleluasaan untuk tabel `review`
 --
 ALTER TABLE `review`
   ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`id_buku`) REFERENCES `buku` (`id`),
   ADD CONSTRAINT `review_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`);
 
 --
--- Constraints for table `reward`
+-- Ketidakleluasaan untuk tabel `reward`
 --
 ALTER TABLE `reward`
   ADD CONSTRAINT `reward_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`);
