@@ -71,29 +71,29 @@ $result = $stmt->get_result();
 
   <nav class="site-nav dark js-site-navbar mb-5 site-navbar-target">
     <div class="container">
-        <div class="site-navigation d-flex align-items-center justify-content-between">
-          <a href="index.html" class="logo m-0">rea<span class="text-primary">D</span>s</a>
-            <ul class="js-clone-nav d-none d-lg-inline-block site-menu d-flex">
-                <li class="active"><a href="index.php" class="nav-link">Home</a></li>
-                <li class="has-children">
-                    <a href="#" class="nav-link">Kategori</a>
-                    <ul class="dropdown">
-                        <li><a href="category.php?kategori=pendidikan" class="nav-link">Pendidikan</a></li>
-                        <li><a href="category.php?kategori=fiksi remaja" class="nav-link">Fiksi Remaja</a></li>
-                        <li><a href="category.php?kategori=cerita anak" class="nav-link">Cerita Anak</a></li>
-                        <li><a href="category.php?kategori=majalah" class="nav-link">Majalah</a></li>
-                    </ul>
-                </li>
-                <li><a href="#features-section" class="nav-link">History</a></li>
-                <li><a href="#contact-section" class="nav-link">Contact</a></li>
+      <div class="site-navigation d-flex align-items-center justify-content-between">
+        <a href="index.php" class="logo m-0" style="padding: 20px;">rea<span class="text-primary">D</span>s</a>
+        <ul class="js-clone-nav d-none d-lg-inline-block site-menu d-flex">
+          <li class="active" style="margin-left: 100px;"><a href="index.php" class="nav-link">Home</a></li>
+          <li class="has-children">
+            <a href="#" class="nav-link">Kategori</a>
+            <ul class="dropdown">
+              <li><a href="category.php?kategori=pendidikan" class="nav-link">Pendidikan</a></li>
+              <li><a href="category.php?kategori=fiksi remaja" class="nav-link">Fiksi Remaja</a></li>
+              <li><a href="category.php?kategori=cerita anak" class="nav-link">Cerita Anak</a></li>
+              <li><a href="category.php?kategori=majalah" class="nav-link">Majalah</a></li>
             </ul>
+          </li>
+          <li><a href="history.php" class="nav-link">History</a></li>
+        </ul>
 
-            <div class="d-flex align-items-center ml-auto">
-                <form id="search" action="#" class="search-input d-flex align-items-center mr-4">
-                    <input type="text" placeholder="Cari Buku" id='searchText' name="searchKeyword" onkeypress="handle" />
-                    <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="d-flex align-items-center ml-auto">
+                <!-- Search Form -->
+                <form id="search" action="search.php" method="GET" class="search-input d-flex align-items-center mr-4" style="position: relative;">
+                  <input type="text" placeholder="cari buku" id='searchText' name="cari" style="padding-left: 20px;" />
+                  <button type="submit" name="search" style="border: none; background: none;"><i class="fa-solid fa-magnifying-glass" style="color:black; position: absolute; right: 55px; top: 50%; transform: translateY(-50%);"></i></button>
                 </form>
-                
+
                 <ul class="js-clone-nav d-none d-lg-inline-block site-menu d-flex align-items-center">
                     <li class="mr-3">
                         <img src="images/badge.png" alt="">
@@ -102,18 +102,18 @@ $result = $stmt->get_result();
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa-solid fa-user"></i>
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Profile</a>
+                        <div class="dropdown-menu" style="border-radius: 20px; " aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="profile.php">Profile</a>
                             <a href="logout.php" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
                         </div>
                     </li>
                 </ul>
-            </div>
-
-            <a href="#" class="burger ml-auto site-menu-toggle js-menu-toggle d-inline-block dark d-lg-none" data-toggle="collapse" data-target="#main-navbar">
-                <span></span>
-            </a>
         </div>
+
+        <a href="#" class="burger ml-auto site-menu-toggle js-menu-toggle d-inline-block dark d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+          <span></span>
+        </a>
+      </div>
     </div>
   </nav>
 
