@@ -143,8 +143,8 @@ $result = $stmt->get_result();
         <img src="img/<?php echo $row['gambar']; ?>" class="card-img-top" alt="..." style="height: 250px; width: 100%;">
         <div class="card-body d-flex flex-column">
           <div class="mb-auto">
-              <span class="caption"><?php echo $row['kategori']; ?></span>
-              <h5 class="card-title"><?php echo $row['judul_buku']; ?></h5>
+            <span class="caption"><?php echo $row['kategori']; ?></span>
+            <h5 class="card-title"><?php echo $row['judul_buku']; ?></h5>
           </div>
           <a href="detail.php?id=<?php echo $row['id']; ?>" class="btn btn-primary" style="display: grid; place-items: center;">Detail</a>
         </div>
@@ -152,17 +152,18 @@ $result = $stmt->get_result();
     <?php endwhile; ?>
   </div>
         
-  <?php
-  // Close statement and connection
-  $stmt->close();
-  $is_connect->close();
-  ?>
+    <?php
+    // Close statement and connection
+    $stmt->close();
+    $is_connect->close();
+    ?>
 
         
     <div class="untree_co-section">
-        <div class="container">
+      <div class="container">
         <div class="row">
-        </div> <!-- /.container -->
+        </div>
+      </div> <!-- /.container -->
     </div> <!-- /.untree_co-section -->
 
     <div class="site-footer">
@@ -238,9 +239,10 @@ $result = $stmt->get_result();
   </div> <!-- /.site-footer -->
 
   <div id="overlayer"></div>
-  <div class="loader">
-    <div class="spinner-border" role="status">
-      <span class="sr-only">Loading...</span>
+    <div class="loader">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
     </div>
   </div>
 
