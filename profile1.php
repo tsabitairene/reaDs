@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['id'])) {
+  header('Location: login.php');
+}
+
+include('connect.php');
+
+?>
+
+
+
 <!-- /*
 * Template Name: Landing
 * Template Author: Untree.co
@@ -55,48 +68,41 @@
 
   <nav class="site-nav dark js-site-navbar mb-5 site-navbar-target">
     <div class="container">
-        <div class="site-navigation d-flex align-items-center justify-content-between">
-          <a href="index.html" class="logo m-0">rea<span class="text-primary">D</span>s</a>
-            <ul class="js-clone-nav d-none d-lg-inline-block site-menu d-flex">
-                <li class="active" style="margin-left: 100px;"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="has-children">
-                    <a href="#" class="nav-link">Kategori</a>
-                    <ul class="dropdown">
-                        <li><a href="category.html" class="nav-link">Pendidikan</a></li>
-                        <li><a href="category.html" class="nav-link">Fiksi Remaja</a></li>
-                        <li><a href="category.html" class="nav-link">Cerita Anak</a></li>
-                        <li><a href="category.html" class="nav-link">Majalah</a></li>
-                    </ul>
-                </li>
-                <li><a href="history.html" class="nav-link">History</a></li>
-            </ul>
+      <div class="site-navigation d-flex align-items-center justify-content-between">
+        <a href="admin.php" class="logo m-0">rea<span class="text-primary">D</span>s</a>
+        <ul class="js-clone-nav d-none d-lg-inline-block site-menu d-flex">
+          <li class="active">
+            <a href="admin.php" style="margin-left: 150px;" class="nav-link">Home</a>
+          </li>
+          <li>
+            <a href="admin.php#rekap-section" class="nav-link">Rekap Peminjaman</a>
+          </li>
+          <li>
+            <a href="admin.php#update-section" class="nav-link">Update Reward</a>
+          </li>
+          <li>
+            <a href="admin.php#tambah-section" class="nav-link">Tambah Buku</a>
+          </li>
+        </ul>
 
-            <div class="d-flex align-items-center ml-auto">
-              <form id="search" action="" method="GET" class="search-input d-flex align-items-center mr-4" style="position: relative;">
-                <input type="text" placeholder="Cari buku" id='searchText' name="searchKeyword" style="padding-right: 30px;" />
-                <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%);"></i>
-              </form>
-                
-                <ul class="js-clone-nav d-none d-lg-inline-block site-menu d-flex align-items-center">
-                    <li class="mr-3">
-                      <a href="profile.html"><img src="images/badge.png" alt=""></a>
-                    </li>
-                    <li class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa-solid fa-user"></i>
-                        </button>
-                        <div class="dropdown-menu" style="border-radius: 20px; " aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="profile.html">Profile</a>
-                            <a href="/l" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <a href="#" class="burger ml-auto site-menu-toggle js-menu-toggle d-inline-block dark d-lg-none" data-toggle="collapse" data-target="#main-navbar">
-                <span></span>
-            </a>
+        <div class="d-flex align-items-center ml-auto">
+          <ul class="js-clone-nav d-none d-lg-inline-block site-menu d-flex align-items-center">
+          <li class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-solid fa-user"></i>
+              </button>
+              <div class="dropdown-menu" style="border-radius: 20px; " aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="profile1.php">Profile</a>
+                <a href="logout.php" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+              </div>
+            </li>
+          </ul>
         </div>
+
+        <a href="#" class="burger ml-auto site-menu-toggle js-menu-toggle d-inline-block dark d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+          <span></span>
+        </a>
+      </div>
     </div>
   </nav>
             </div>
@@ -127,8 +133,25 @@
             </div>
             <div class="card-body">
               <div class="col-lg-12">
-                <h5 class="card-title">nama_siswa</h5>
-                <div class="container pb-5 mb-5 border-bottom">
+              <?php
+                $sql = "SELECT nama_lengkap FROM user WHERE id = ".$_SESSION['id']; // Ganti '$id_siswa' dengan id siswa yang sesuai
+                $result = mysqli_query($is_connect, $sql);
+
+                // Memeriksa apakah query berhasil dieksekusi
+                if (mysqli_num_rows($result) > 0) {
+                    // Menampilkan nama lengkap siswa
+                    $row = mysqli_fetch_assoc($result);
+                    $nama_lengkap = $row['nama_lengkap'];
+                    echo '<h5 class="card-title">' . $nama_lengkap . '</h5>';
+                } else {
+                    // Jika data tidak ditemukan atau terjadi kesalahan dalam query
+                    echo '<h5 class="card-title">Nama Tidak Ditemukan</h5>';
+                }
+
+                // Menutup koneksi ke database (jika diperlukan)
+                mysqli_close($is_connect);
+                ?>
+                <!-- <div class="container pb-5 mb-5 border-bottom">
                   <div class="row">
                     <div class="col-lg-12">
                       <div class="custom-accordion" id="accordion_1">
@@ -142,11 +165,11 @@
                               misal
                             </div>
                           </div>
-                        </div> <!-- .accordion-item -->
+                        </div> 
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>

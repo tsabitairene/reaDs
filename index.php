@@ -1,0 +1,404 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['id'])) {
+  header('Location: login.php');
+}
+
+include('connect.php');
+
+$sql = "SELECT * FROM buku";
+$result = $is_connect->query($sql);
+
+?>
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Untree.co">
+  <link rel="shortcut icon" href="images/50.png">
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/fontawesome.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
+
+  <title>reaDs</title>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="100">
+
+  <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close">
+        <span class="icofont-close js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
+
+
+  <nav class="site-nav dark js-site-navbar mb-5 site-navbar-target">
+    <div class="container">
+      <div class="site-navigation d-flex align-items-center justify-content-between">
+        <a href="index.php" class="logo m-0" style="padding: 20px;">rea<span class="text-primary">D</span>s</a>
+        <ul class="js-clone-nav d-none d-lg-inline-block site-menu d-flex">
+          <li class="active" style="margin-left: 100px;"><a href="index.php" class="nav-link">Home</a></li>
+          <li class="has-children">
+            <a href="#" class="nav-link">Kategori</a>
+            <ul class="dropdown">
+              <li><a href="category.php?kategori=pendidikan" class="nav-link">Pendidikan</a></li>
+              <li><a href="category.php?kategori=fiksi remaja" class="nav-link">Fiksi Remaja</a></li>
+              <li><a href="category.php?kategori=cerita anak" class="nav-link">Cerita Anak</a></li>
+              <li><a href="category.php?kategori=majalah" class="nav-link">Majalah</a></li>
+            </ul>
+          </li>
+          <li><a href="history.php" class="nav-link">History</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center ml-auto">
+                <!-- Search Form -->
+                <form id="search" action="search.php" method="GET" class="search-input d-flex align-items-center mr-4" style="position: relative;">
+                  <input type="text" placeholder="cari buku" id='searchText' name="cari" style="padding-left: 20px;" />
+                  <button type="submit" name="search" style="border: none; background: none;"><i class="fa-solid fa-magnifying-glass" style="color:black; position: absolute; right: 55px; top: 50%; transform: translateY(-50%);"></i></button>
+                </form>
+
+                <ul class="js-clone-nav d-none d-lg-inline-block site-menu d-flex align-items-center">
+                    <li class="mr-3">
+                        <img src="images/badge.png" alt="">
+                    </li>
+                    <li class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa-solid fa-user"></i>
+                        </button>
+                        <div class="dropdown-menu" style="border-radius: 20px; " aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="profile.php">Profile</a>
+                            <a href="logout.php" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+        </div>
+
+        <a href="#" class="burger ml-auto site-menu-toggle js-menu-toggle d-inline-block dark d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+          <span></span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="untree_co-hero pb-0" id="home-section">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12">
+          <div class="row justify-content-center">
+
+          </div>
+          <div class="row align-items-center">
+
+            <div class="col-lg-4">
+              <div class="intro">
+
+                <div class="excerpt" data-aos="fade-up" data-aos-delay="100">
+                  <span class="caption">Selamat datang di</span>
+                  <h2 class="font-weight-bold">reaDs!</h2>
+                  <p>Pinjam buku jadi lebih seru dan menyenangkan.</p>
+                </div> <!-- /.excerpt -->
+                <p data-aos="fade-up" data-aos-delay="200">
+                  <a href="#koleksi-section" class="btn btn-primary smoothscroll mr-1">Pinjam buku</a>
+                </p>
+              </div>
+
+            </div> <!-- /.col-lg-5 -->
+            <div class="col-lg-8">
+              <div class="illustration">
+                <img src="images/back.png" alt="Image" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+    <!-- <div class="illustration">
+      
+    </div> -->
+  </div> <!-- /.untree_co-hero -->
+
+  <div class="untree_co-section" id="koleksi-section">
+    <div class="container">
+
+      <div class="row mb-5">
+        <div class="col-12 text-center" data-aos="fade-up" data-aos-delay="0">
+          <!-- <span class="caption">Features</span> -->
+          <h2 class="heading">Koleksi Unggulan</h2>
+          <!-- <p>Minggu ini</p> -->
+        </div>
+      </div> <!-- /.row -->
+
+      <div class="card-container">
+        <?php
+        if ($result->num_rows > 0) {
+          // Array untuk menyimpan jumlah buku yang telah ditampilkan untuk setiap kategori
+          $kategori_count = array(
+            'fiksi_remaja' => 0,
+            'cerita_anak' => 0,
+            'pendidikan' => 0,
+            'majalah' => 0
+          );
+
+          // Menampilkan data untuk setiap buku
+          while ($row = $result->fetch_assoc()) {
+            // Memeriksa kategori buku dan memastikan jumlah buku yang ditampilkan untuk setiap kategori tidak melebihi batas
+            switch ($row['kategori']) {
+              case 'fiksi remaja':
+                if ($kategori_count['fiksi_remaja'] < 2) {
+                  displayBook($row);
+                  $kategori_count['fiksi_remaja']++;
+                }
+                break;
+              case 'cerita anak':
+                if ($kategori_count['cerita_anak'] < 2) {
+                  displayBook($row);
+                  $kategori_count['cerita_anak']++;
+                }
+                break;
+              case 'pendidikan':
+                if ($kategori_count['pendidikan'] < 1) {
+                  displayBook($row);
+                  $kategori_count['pendidikan']++;
+                }
+                break;
+              case 'majalah':
+                if ($kategori_count['majalah'] < 1) {
+                  displayBook($row);
+                  $kategori_count['majalah']++;
+                }
+                break;
+            }
+
+            // Berhenti loop jika sudah menampilkan 6 buku
+            if (array_sum($kategori_count) >= 6) {
+              break;
+            }
+          }
+        } else {
+          echo "Tidak ada buku ditemukan.";
+        }
+
+        // Menutup koneksi
+        $is_connect->close();
+
+        // Fungsi untuk menampilkan buku
+        function displayBook($row)
+        {
+          echo '
+                <div class="card" style="width: 10rem; border: 1px solid #ccc; border-radius: 20px;">
+                    <img src="img/' . $row['gambar'] . '" class="card-img-top" alt="..." style="height: 250px; width: 100%;">
+                    <div class="card-body d-flex flex-column">
+                        <span class="caption">' . $row['kategori'] . '</span>
+                        <h5 class="card-title">' . $row['judul_buku'] . '</h5>
+                        <a href="detail.php?id=' . $row['id'] . '" class="btn btn-primary" style="margin-top: auto;">Detail</a>
+                    </div>
+                </div>
+            ';
+        }
+        ?>
+      </div>
+    </div> <!-- /.container -->
+  </div> <!-- /.untree_co-section -->
+
+  <div class="untree_co-section">
+    <div class="container justify-content-center align-items-center">
+      <div class="row justify-content-center">
+        <div class="col-12 mb-5 text-center" data-aos="fade-up">
+          <!-- <span class="caption">Features</span> -->
+          <h2 class="heading">Kategori</h2>
+        </div>
+
+        <div class="col-md-6 mb-4 mb-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+          <div class="service d-flex flex-column justify-content-center align-items-center" style="height: 100%;">
+            <div class="service-icon color-1 mb-4 text-center d-flex justify-content-center align-items-center">
+              <a href="category.php?kategori=pendidikan">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="25" height="25">
+                  <path d="M337.8 5.4C327-1.8 313-1.8 302.2 5.4L166.3 96H48C21.5 96 0 117.5 0 144V464c0 26.5 21.5 48 48 48H256V416c0-35.3 28.7-64 64-64s64 28.7 64 64v96H592c26.5 0 48-21.5 48-48V144c0-26.5-21.5-48-48-48H473.7L337.8 5.4zM96 192h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V208c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V208zM96 320h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V336c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V336zM232 176a88 88 0 1 1 176 0 88 88 0 1 1 -176 0zm88-48c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H336V144c0-8.8-7.2-16-16-16z" />
+                </svg>
+              </a>
+            </div> <!-- /.icon -->
+            <div class="service-contents text-center">
+              <h3>Pendidikan</h3>
+            </div> <!-- /.service-contents-->
+          </div> <!-- /.service -->
+        </div> <!-- /.col-lg-3 -->
+
+
+        <div class="col-md-6 mb-4 mb-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+          <div class="service d-flex flex-column justify-content-center align-items-center" style="height: 100%;">
+            <div class="service-icon color-2 mb-4 text-center d-flex justify-content-center align-items-center">
+              <a href="category.php?kategori=fiksi remaja">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="25" height="25">
+                  <path d="M160 0a64 64 0 1 1 0 128A64 64 0 1 1 160 0zM88 480V400H70.2c-10.9 0-18.6-10.7-15.2-21.1l31.1-93.4L57.5 323.3c-10.7 14.1-30.8 16.8-44.8 6.2s-16.8-30.7-6.2-44.8L65.4 207c22.4-29.6 57.5-47 94.6-47s72.2 17.4 94.6 47l58.9 77.7c10.7 14.1 7.9 34.2-6.2 44.8s-34.2 7.9-44.8-6.2l-28.6-37.8L265 378.9c3.5 10.4-4.3 21.1-15.2 21.1H232v80c0 17.7-14.3 32-32 32s-32-14.3-32-32V400H152v80c0 17.7-14.3 32-32 32s-32-14.3-32-32zM480 0a64 64 0 1 1 0 128A64 64 0 1 1 480 0zm-8 384v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V300.5L395.1 321c-9.4 15-29.2 19.4-44.1 10s-19.4-29.2-10-44.1l51.7-82.1c17.6-27.9 48.3-44.9 81.2-44.9h12.3c33 0 63.7 16.9 81.2 44.9L619.1 287c9.4 15 4.9 34.7-10 44.1s-34.7 4.9-44.1-10L552 300.5V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V384H472z" />
+                </svg>
+              </a>
+            </div> <!-- /.icon -->
+            <div class="service-contents text-center">
+              <h3>Fiksi Remaja</h3>
+              <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>   -->
+            </div> <!-- /.service-contents-->
+          </div> <!-- /.service -->
+        </div> <!-- /.col-lg-3 -->
+
+        <div class="col-md-6 mb-4 mb-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+          <div class="service d-flex flex-column justify-content-center align-items-center" style="height: 100%;">
+            <div class="service-icon color-3 mb-4 text-center d-flex justify-content-center align-items-center">
+              <a href="category.php?kategori=cerita anak">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="25" height="25">
+                  <path d="M256 64A64 64 0 1 0 128 64a64 64 0 1 0 128 0zM152.9 169.3c-23.7-8.4-44.5-24.3-58.8-45.8L74.6 94.2C64.8 79.5 45 75.6 30.2 85.4s-18.7 29.7-8.9 44.4L40.9 159c18.1 27.1 42.8 48.4 71.1 62.4V480c0 17.7 14.3 32 32 32s32-14.3 32-32V384h32v96c0 17.7 14.3 32 32 32s32-14.3 32-32V221.6c29.1-14.2 54.4-36.2 72.7-64.2l18.2-27.9c9.6-14.8 5.4-34.6-9.4-44.3s-34.6-5.5-44.3 9.4L291 122.4c-21.8 33.4-58.9 53.6-98.8 53.6c-12.6 0-24.9-2-36.6-5.8c-.9-.3-1.8-.7-2.7-.9z" />
+                </svg>
+              </a>
+            </div> <!-- /.icon -->
+            <div class="service-contents text-center">
+              <h3>Cerita Anak</h3>
+              <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>   -->
+            </div> <!-- /.service-contents-->
+          </div> <!-- /.service -->
+        </div> <!-- /.col-lg-3 -->
+
+        <div class="col-md-6 mb-4 mb-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+          <div class="service d-flex flex-column justify-content-center align-items-center" style="height: 100%;">
+            <div class="service-icon color-4 mb-4 text-center d-flex justify-content-center align-items-center">
+              <a href="category.php?kategori=majalah">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25" height="25">
+                  <path d="M64 256V160H224v96H64zm0 64H224v96H64V320zm224 96V320H448v96H288zM448 256H288V160H448v96zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z" />
+                </svg>
+              </a>
+            </div> <!-- /.icon -->
+            <div class="service-contents text-center">
+              <h3>Majalah</h3>
+              <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>   -->
+            </div> <!-- /.service-contents-->
+          </div> <!-- /.service -->
+        </div> <!-- /.col-lg-3 -->
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+  </div> <!-- /.untree_co-section -->
+
+  <div class="site-footer">
+
+    <div class="footer-dots"></div> <!-- /.footer-dots -->
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="widget">
+            <a href="index.php" class="logo m-0">rea<span class="text-primary">D</span>s</a>
+            <p>Bersama reaDs, pinjam buku menjadi lebih seru dan menyenangkan.</p>
+          </div> <!-- /.widget -->
+          <div class="widget">
+            <h3>Follow Us</h3>
+            <ul class="list-unstyled social">
+              <li><a href="https://www.instagram.com/stembayolib"><span class="icon-instagram"></span></a></li>
+              <!-- <li><a href="#"><span class="icon-twitter"></span></a></li> -->
+              <li><a href="https://www.facebook.com/stembayolover"><span class="icon-facebook"></span></a></li>
+              <li><a href="https://www.linkedin.com/school/smk-n-2-depok-sleman-yogyakarta/"><span class="icon-linkedin"></span></a></li>
+              <!-- <li><a href="#"><span class="icon-pinterest"></span></a></li> -->
+              <!-- <li><a href="#"><span class="icon-dribbble"></span></a></li> -->
+            </ul>
+          </div> <!-- /.widget -->
+        </div> <!-- /.col-lg-3 -->
+
+        <div class="col-lg-2 ml-auto">
+          <div class="widget">
+            <h3>Page</h3>
+            <ul class="list-unstyled float-left links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Kategori</a></li>
+              <li><a href="#">History</a></li>
+            </ul>
+          </div> <!-- /.widget -->
+        </div> <!-- /.col-lg-3 -->
+
+        <div class="col-lg-2">
+          <div class="widget">
+            <h3>Services</h3>
+            <ul class="list-unstyled float-left links">
+              <li><a href="#">Discover</a></li>
+              <li><a href="#">Borrow</a></li>
+              <li><a href="#">Read</a></li>
+              <li><a href="#">Your Gateway to Knowledge!</a></li>
+            </ul>
+          </div> <!-- /.widget -->
+        </div> <!-- /.col-lg-3 -->
+
+
+        <div class="col-lg-3">
+          <div class="widget">
+            <!-- <h3></h3> -->
+            <address><a href="https://maps.app.goo.gl/qx5d234AWkCP7vGz5">Jl. STM Pembangunan, Mrican, Caturtunggal, Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281</a></address>
+            <ul class="list-unstyled links mb-4">
+              <li><a href="tel://11234567890">0274 - 513515</a></li>
+              <!-- <li><a href="tel://11234567890">+1(123)-456-7890</a></li> -->
+              <li><a href="mailto:info@mydomain.com">reads@gmail.com</a></li>
+            </ul>
+          </div> <!-- /.widget -->
+        </div> <!-- /.col-lg-3 -->
+
+      </div> <!-- /.row -->
+
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+          <p class="copyright"><a href="index.php">reaDs</a> &copy;<script>
+              document.write(new Date().getFullYear());
+            </script>. All Rights Reserved. &mdash; Designed with love by Kelompok 7 <!-- License information: https://untree.co/license/ -->
+          </p>
+        </div>
+      </div>
+    </div> <!-- /.container -->
+  </div> <!-- /.site-footer -->
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/custom.js"></script>
+
+</body>
+
+</html>

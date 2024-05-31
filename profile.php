@@ -1,9 +1,22 @@
-<!-- /*
-* Template Name: Landing
-* Template Author: Untree.co
-* Author URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
+<?php
+session_start();
+
+if(!isset($_SESSION['id'])) {
+  header('Location: login.php');
+}
+
+include('connect.php');
+
+// Misalkan Anda sudah memiliki koneksi ke database disini
+
+// Query SQL untuk mengambil reward
+$sql_reward = "SELECT user.nama_lengkap, reward.reward 
+                FROM reward INNER JOIN user ON user.id = reward.id_user
+                WHERE id_user = ".$_SESSION['id']; // Sesuaikan dengan struktur tabel reward Anda
+$result_reward = mysqli_query($is_connect, $sql_reward);
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -55,147 +68,149 @@
 
   <nav class="site-nav dark js-site-navbar mb-5 site-navbar-target">
     <div class="container">
-        <div class="site-navigation d-flex align-items-center justify-content-between">
-          <a href="index.html" class="logo m-0">rea<span class="text-primary">D</span>s</a>
-            <ul class="js-clone-nav d-none d-lg-inline-block site-menu d-flex">
-              <li class="active" style="margin-left: 100px;"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="has-children">
-                    <a href="#" class="nav-link">Kategori</a>
-                    <ul class="dropdown">
-                        <li><a href="category.html" class="nav-link">Pendidikan</a></li>
-                        <li><a href="category.html" class="nav-link">Fiksi Remaja</a></li>
-                        <li><a href="category.html" class="nav-link">Cerita Anak</a></li>
-                        <li><a href="category.html" class="nav-link">Majalah</a></li>
-                    </ul>
-                </li>
-                <li><a href="history.html" class="nav-link">History</a></li>
-                <!-- <li><a href="#contact-section" class="nav-link">Contact</a></li> -->
+      <div class="site-navigation d-flex align-items-center justify-content-between">
+        <a href="index.php" class="logo m-0" style="padding: 20px;">rea<span class="text-primary">D</span>s</a>
+        <ul class="js-clone-nav d-none d-lg-inline-block site-menu d-flex">
+          <li class="active" style="margin-left: 100px;"><a href="index.php" class="nav-link">Home</a></li>
+          <li class="has-children">
+            <a href="#" class="nav-link">Kategori</a>
+            <ul class="dropdown">
+              <li><a href="category.php?kategori=pendidikan" class="nav-link">Pendidikan</a></li>
+              <li><a href="category.php?kategori=fiksi remaja" class="nav-link">Fiksi Remaja</a></li>
+              <li><a href="category.php?kategori=cerita anak" class="nav-link">Cerita Anak</a></li>
+              <li><a href="category.php?kategori=majalah" class="nav-link">Majalah</a></li>
             </ul>
+          </li>
+          <li><a href="history.php" class="nav-link">History</a></li>
+        </ul>
 
-            <div class="d-flex align-items-center ml-auto">
-              <form id="search" action="" method="GET" class="search-input d-flex align-items-center mr-4" style="position: relative;">
-                <input type="text" placeholder="Cari buku" id='searchText' name="searchKeyword" style="padding-right: 30px;" />
-                <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%);"></i>
-              </form>
-                
+        <div class="d-flex align-items-center ml-auto">
+                <!-- Search Form -->
+                <form id="search" action="search.php" method="GET" class="search-input d-flex align-items-center mr-4" style="position: relative;">
+                  <input type="text" placeholder="cari buku" id='searchText' name="cari" style="padding-left: 20px;" />
+                  <button type="submit" name="search" style="border: none; background: none;"><i class="fa-solid fa-magnifying-glass" style="color:black; position: absolute; right: 55px; top: 50%; transform: translateY(-50%);"></i></button>
+                </form>
+
                 <ul class="js-clone-nav d-none d-lg-inline-block site-menu d-flex align-items-center">
                     <li class="mr-3">
-                      <a href="profile.html"><img src="images/badge.png" alt=""></a>
+                        <img src="images/badge.png" alt="">
                     </li>
                     <li class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa-solid fa-user"></i>
                         </button>
                         <div class="dropdown-menu" style="border-radius: 20px; " aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="profile.html">Profile</a>
-                            <a href="/l" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                            <a class="dropdown-item" href="profile.php">Profile</a>
+                            <a href="logout.php" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
                         </div>
                     </li>
                 </ul>
-            </div>
-
-            <a href="#" class="burger ml-auto site-menu-toggle js-menu-toggle d-inline-block dark d-lg-none" data-toggle="collapse" data-target="#main-navbar">
-                <span></span>
-            </a>
         </div>
+
+        <a href="#" class="burger ml-auto site-menu-toggle js-menu-toggle d-inline-block dark d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+          <span></span>
+        </a>
+      </div>
     </div>
   </nav>
-
-  <div class="untree_co-section">
-    <div class="container">
-
-      <div class="row">
-        <div class="col-12 mb-5 text-center" data-aos="fade-up">
-          <div class="card mb-5" style="max-width: 1200px; border: none;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="https://cdn.gramedia.com/uploads/items/img20220830_10560995.jpg" class="img-fluid rounded-start" style="border-radius: 10px;" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body" style="text-align: left;">
-                  <h5 class="card-title">Bumi</h5>
-                  <p class="card-text"><small class="text-muted">Tere Liye</small></p>
-                  <p class="card-text">“Namaku Raib, usiaku 15 tahun, kelas sepuluh. Aku anak perempuan seperti kalian, adik-adik kalian, tetangga kalian. Aku punya dua kucing, namanya si Putih dan si Hitam. Mama dan papaku menyenangkan. Guru-guru di sekolahku seru. Teman-temanku baik dan kompak.”</p>
-                  <div class="container mt-5">
-                    <div>
-                      <button id="toggleButton" class="btn btn-primary btn-custom">Pinjam buku</button>
-                    </div>
-                  </div>
-                  <script>
-                    document.getElementById('toggleButton').addEventListener('click', function() {
-                      if (this.textContent === 'Pinjam buku') {
-                        this.textContent = 'Kembalikan buku';
-                      } else {
-                        this.textContent = 'Pinjam buku';
-                      }
-                    });
-                  </script>
-                  <div class="comment-section" style="margin-top: 10rem;">
-                    <span>Comment</span>
-                    <div id="comments"></div>
-                    <textarea class="text btn-outline-primary d-flex align-items-center mr-4" style="border-radius: 20px;" id="comment-input" placeholder="Tulis komentar"></textarea>
-                    <button class="btn btn-primary" onclick="addComment()">Kirim</button>
-                  </div>
-                  <div class="mt-5">
-                    <h3>All Comments</h3>
-                    <div id="comments-section">
-                        <!-- Komentar akan ditampilkan di sini -->
-                    </div>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> <!-- /.row -->
-    </div> <!-- /.container -->
-  </div> <!-- /.untree_co-section -->
-
-            <!-- <div class="item">
-              <div class="untree_co-testimonial d-flex">
-
-                <div class="text">
-                  <blockquote>
-                    &ldquo;Separated they <span class="highlight">live in Bookmarksgrove right at the coast of the Semantics</span>, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. &rdquo;
-                  </blockquote>
-                  <div class="author d-flex">
-                    <div class="pic mr-3">
-                      <img src="images/person_2.jpg" alt="Image" class="img-fluid">
-                    </div>
-                    <div>
-                      <strong class="d-block">Jenny Wilson</strong><span class="d-block">Facebook, Product Lead</span> 
-                    </div>
-
-                  </div>
-                </div> -->
-              </div> <!-- /.untree_co-testimonial -->
-            </div>
-
-            <!-- <div class="item">
-              <div class="untree_co-testimonial d-flex">
-
-                <div class="text">
-                  <blockquote>
-                    &ldquo;Separated they <span class="highlight">live in Bookmarksgrove right at the coast of the Semantics</span>, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. &rdquo;
-                  </blockquote>
-                  <div class="author d-flex">
-                    <div class="pic mr-3">
-                      <img src="images/person_3.jpg" alt="Image" class="img-fluid">
-                    </div>
-                    <div>
-                      <strong class="d-block">James Anderson</strong><span class="d-block">Facebook, Product Lead</span> 
-                    </div>
-
-                  </div>
-                </div> -->
-              </div> <!-- /.untree_co-testimonial -->
             </div>
           </div>
         </div>
       </div> <!-- /.row -->    
     </div> <!-- /.container -->  
   </div> 
+
+  <div class="untree_co-section" id="contact-section">
+    <div class="container">
+      <div class="row mb-5"  data-aos="fade-up" data-aos-delay="0">
+        <div class="col-12 text-center">
+          <!-- <span class="caption">Contact</span> -->
+          <h2 class="heading">Profile</h2>
+          <!-- <p>Far from the countries Vokalia and Consonantia</p> -->
+        </div>
+      </div> <!-- /.row -->
+      <div class="row">
+
+        <div class="col-lg-12">
+          <div class="card" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);">
+            <div class="card-horizontal" style="display: flex; flex-direction: row;">
+            <div class="col-lg-4 d-flex justify-content-center align-items-center">
+              <div class="img-square-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/256/3135/3135823.png" style="width: 12rem; align-items: center;" class="card-img-top" alt="...">
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="col-lg-12">
+              <?php
+                $sql = "SELECT nama_lengkap FROM user WHERE id = ".$_SESSION['id']; // Ganti '$id_siswa' dengan id siswa yang sesuai
+                $result = mysqli_query($is_connect, $sql);
+
+                // Memeriksa apakah query berhasil dieksekusi
+                if (mysqli_num_rows($result) > 0) {
+                    // Menampilkan nama lengkap siswa
+                    $row = mysqli_fetch_assoc($result);
+                    $nama_lengkap = $row['nama_lengkap'];
+                    echo '<h5 class="card-title">' . $nama_lengkap . '</h5>';
+                } else {
+                    // Jika data tidak ditemukan atau terjadi kesalahan dalam query
+                    echo '<h5 class="card-title">Nama Tidak Ditemukan</h5>';
+                }
+
+                // Menutup koneksi ke database (jika diperlukan)
+                mysqli_close($is_connect);
+                ?>
+                <div class="container pb-5 mb-5 border-bottom">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="custom-accordion" id="accordion_1">
+                        <div class="accordion-item">
+                        <?php
+
+                      // Periksa apakah ada reward yang ditemukan
+                      if ($result_reward && mysqli_num_rows($result_reward) > 0) {
+                          echo '<h2 class="mb-0">
+                                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Tampilkan reward</button>
+                                </h2>';
+                          echo '<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion_1">
+                                  <div class="accordion-body">';
+                          echo '<ul>';
+                          // Menampilkan data reward dalam daftar
+                          while ($row_reward = mysqli_fetch_assoc($result_reward)) {
+                              echo '<li>' . htmlspecialchars($row_reward['reward']) . '</li>';
+                          }
+                          echo '</ul>';
+                          echo '</div>
+                                </div>';
+                      } else {
+                          // Jika tidak ada reward yang ditemukan
+                          echo '<h2 class="mb-0">Tidak ada reward yang tersedia</h2>';
+                      }
+                      ?>
+
+
+                          <!-- <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Tampilkan reward</button>
+                          </h2> -->
+                          <!-- <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion_1">
+                            <div class="accordion-body">
+                              misal
+                            </div> -->
+                          </div>
+                        </div> <!-- .accordion-item -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div> <!-- /.col-lg-7 -->
+        
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+  </div> <!-- /.untree_co-section bg-light -->
+  </div>
   
+
   <div class="site-footer">
 
     <div class="footer-dots"></div> <!-- /.footer-dots -->
