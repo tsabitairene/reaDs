@@ -1,7 +1,7 @@
 <?php
 
 $username = "root"; 
-$password = "";
+$password = "123";
 $host = "localhost";
 $db_name = "reads_db";
 
